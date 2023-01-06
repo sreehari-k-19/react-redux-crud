@@ -1,0 +1,255 @@
+$maincolor: #a20c34;
+$background: linear-gradient(
+  to right bottom,
+  #a20c34,
+  #7e0d2e,
+  #5b0d25,
+  #3a0c1a,
+  #1e010a
+);
+$cupshadow: rgb(149, 155, 172);
+body{
+  background: #e8dbdfb0;
+}
+.signupform {
+  background: #ffff;
+  background-image: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.text-danger{
+  color: rgb(247, 38, 38);
+}
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  min-width: 500px;
+  max-width: 700px;
+  border-radius: 7px;
+  border-left: 7px solid $maincolor;
+  .title {
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 0;
+  }
+  .input-box {
+    position: relative;
+    margin-bottom: 15px;
+    label {
+      position: absolute;
+      top: 20px;
+      left: 5px;
+      padding: 14px 5px;
+      display: block;
+      pointer-events: none;
+      transition: 0.2s;
+    }
+    .view-pass {
+      width: 45px;
+      position: absolute;
+      top: 27px;
+      right: 2px;
+      cursor: pointer;
+      background-color: rgba(236, 236, 236, 0.8);
+      padding: 7px 12px;
+      backdrop-filter: blur(3px);
+      display: none;
+    }
+  }
+  .input {
+    border: none;
+    border-bottom: 1px solid #efefef;
+    background-color: #ececec;
+    outline: none;
+    width: 100%;
+    padding: 14px 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  }
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border-left: 2px solid #a00a37;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    background: $maincolor;
+    background-image: $background;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .auth-action {
+    display: flex;
+    justify-content: space-between;
+  }
+  .auth-action a {
+    display: inline-block;
+    padding: 15px 0;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
+
+.login-box .input-box input:focus ~ label,
+.login-box .input-box input:valid ~ label {
+  top: -20px;
+  left: 2px;
+  font-size: 14px;
+}
+
+.nav {
+  position: relative;
+  display: grid;
+  height: 120px;
+  width: 100%;
+  place-items: center;
+  background-image: $background;
+  img {
+    height: 120px;
+  }
+  div {
+    position: absolute;
+    right: 60px;
+    font-size: 30px;
+    color: #dddddd;
+  }
+}
+.semi {
+  margin-top: 65px;
+  text-align: center;
+  h1 {
+    color: #a20c34;
+  }
+}
+//card
+
+.team-card {
+  position: relative;
+  min-width: 340px;
+  background: #fff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 10px;
+  border-radius: 25px;
+  min-height: 178px;
+  .content {
+    display: flex;
+    align-items: center;
+    h2 {
+      margin-top: 5px;
+      margin-bottom: 2px;
+    }
+    h4 {
+      margin: 0;
+    }
+    p {
+      max-width: 230px;
+      text-align: justify;
+      font-size: 10px;
+    }
+  }
+  .teamimg {
+    position: absolute;
+    height: 120px;
+    top: 50%;
+    // right: 40%;
+    right: -58%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+    border-radius: 20px;
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+}
+
+.teams {
+  min-height: 80vh;
+  margin: 40px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  .a,
+  .c {
+    justify-self: start;
+  }
+  .b,
+  .d {
+    justify-self: end;
+    .content {
+      justify-content: end;
+    }
+  }
+  .cup img {
+    height: 400px;
+    filter: drop-shadow(0 0 0.75rem $cupshadow);
+  }
+  .cup {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+}
+.userdetails {
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    thead tr {
+      background-color: $maincolor;
+      color: #ffffff;
+      text-align: left;
+    }
+    th,
+    td {
+      padding: 12px 15px;
+    }
+    tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+    tbody tr:last-of-type {
+      border-bottom: 2px solid $maincolor;
+    }
+    tbody tr:hover {
+      font-weight: bold;
+      color: $maincolor;
+    }
+  }
+}
+
+.adminheader {
+  height: 100px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-image: $background;
+  div {
+    position: absolute;
+    right: 80px;
+    color: #fff;
+    font-size: 45px;
+  }
+  h2 {
+    color: #fff;
+  }
+}
